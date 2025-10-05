@@ -29,7 +29,7 @@ export async function GET() {
     });
   } catch (err) {
     return NextResponse.json(
-      { message: "Invalid or expired token" },
+      { message: `Invalid or expired token ${err}` },
       { status: 401 }
     );
   }
