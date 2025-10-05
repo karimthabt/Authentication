@@ -27,9 +27,9 @@ export async function GET() {
         role: decoded.userRole,
       },
     });
-  } catch (err) {
+  } catch {
     return NextResponse.json(
-      { message: `Invalid or expired token ${err}` },
+      { message: "Invalid or expired token " },
       { status: 401 }
     );
   }
