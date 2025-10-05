@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --font-sans: var(--font-geist-sans, Arial, sans-serif);
+  --font-mono: var(--font-geist-mono, monospace);
+}
+
+/* وضع الألوان الداكنة (لو حبيت تفعلها لاحقًا) */
+@media (prefers-color-scheme: dark) {
+  /* :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  } */
+}
+
+/* إعدادات الخط والخلفية واللون */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  scrollbar-width: none;            /* Firefox */
+  -ms-overflow-style: none;         /* IE & Edge */
+}
+
+/* إخفاء scrollbar من كل العناصر */
+* {
+  scrollbar-width: none;            /* Firefox */
+  -ms-overflow-style: none;         /* IE & Edge */
+}
+
+/* إخفاء scrollbar في Webkit (Chrome, Safari, Edge) */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes light-sweep-red {
+  0%, 100% { transform: translateX(-100%); opacity: 0; }
+  20%, 80% { opacity: 1; }
+  50% { transform: translateX(100%); }
+}
+
+@keyframes light-sweep-blue {
+  0%, 100% { transform: translateX(100%); opacity: 0; }
+  20%, 80% { opacity: 1; }
+  50% { transform: translateX(-100%); }
+}
+
+@keyframes light-flash-red {
+  0%, 100% { opacity: 0.2; box-shadow: 0 0 5px 2px rgba(239, 68, 68, 0.5); }
+  50% { opacity: 1; box-shadow: 0 0 15px 5px rgba(239, 68, 68, 0.8); }
+}
+
+@keyframes light-flash-blue {
+  0%, 100% { opacity: 0.2; box-shadow: 0 0 5px 2px rgba(59, 130, 246, 0.5); }
+  50% { opacity: 1; box-shadow: 0 0 15px 5px rgba(59, 130, 246, 0.8); }
+}
+
+@keyframes light-ray-red {
+  0% { transform: skewX(-20deg) translateX(-30%); }
+  100% { transform: skewX(-20deg) translateX(30%); }
+}
+
+@keyframes light-ray-blue {
+  0% { transform: skewX(20deg) translateX(30%); }
+  100% { transform: skewX(20deg) translateX(-30%); }
+}
+
+@keyframes ambient-light-red {
+  0%, 100% { opacity: 0.03; }
+  50% { opacity: 0.08; }
+}
+
+@keyframes ambient-light-blue {
+  0%, 100% { opacity: 0.03; }
+  50% { opacity: 0.08; }
+}
+
+.animate-light-sweep-red {
+  animation: light-sweep-red 2s ease-in-out infinite;
+}
+
+.animate-light-sweep-blue {
+  animation: light-sweep-blue 2s ease-in-out infinite;
+}
+
+.animate-light-flash-red {
+  animation: light-flash-red 1s ease infinite alternate;
+}
+
+.animate-light-flash-blue {
+  animation: light-flash-blue 1s ease infinite alternate;
+}
+
+.animate-light-ray-red {
+  animation: light-ray-red 3s linear infinite alternate;
+}
+
+.animate-light-ray-blue {
+  animation: light-ray-blue 3s linear infinite alternate;
+}
+
+.animate-ambient-light-red {
+  animation: ambient-light-red 3s ease-in-out infinite alternate;
+}
+
+.animate-ambient-light-blue {
+  animation: ambient-light-blue 3s ease-in-out infinite alternate-reverse;
+}
